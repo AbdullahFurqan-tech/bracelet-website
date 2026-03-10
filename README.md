@@ -24,28 +24,6 @@ A modern, responsive e-commerce website for selling handcrafted bracelets. Built
 - **SEO Optimized**: Meta tags, structured data, and clean URLs
 - **Cross-browser Compatible**: Works on all modern browsers
 
-## 📁 Project Structure
-
-```
-bracelett_website/
-├── index.php              # Homepage with featured products
-├── products.php           # Product catalog with filtering
-├── product.php            # Individual product details
-├── about.php             # About us page
-├── contact.php           # Contact form and information
-├── includes/
-│   ├── db_connect.php    # Database connection and setup
-│   └── functions.php     # Helper functions and utilities
-├── assets/
-│   ├── css/
-│   │   └── style.css     # Main stylesheet
-│   ├── js/
-│   │   └── main.js       # JavaScript functionality
-│   └── images/
-│       └── placeholder.html # Image generator for placeholders
-└── README.md             # This file
-```
-
 ## 🚀 Installation & Setup
 
 ### Prerequisites
@@ -85,48 +63,6 @@ bracelett_website/
    - The website should be fully functional
 
 ## 🛠️ Configuration
-
-### Database Configuration
-The website automatically creates the necessary database tables and sample data if the database connection is successful. If you prefer to set up the database manually:
-
-```sql
--- Create products table
-CREATE TABLE products (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    short_description TEXT,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-    image VARCHAR(255),
-    category VARCHAR(100),
-    featured BOOLEAN DEFAULT FALSE,
-    in_stock BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Create orders table
-CREATE TABLE orders (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(255) NOT NULL,
-    customer_email VARCHAR(255) NOT NULL,
-    customer_phone VARCHAR(50),
-    shipping_address TEXT,
-    total_amount DECIMAL(10,2) NOT NULL,
-    status ENUM('pending', 'processing', 'shipped', 'delivered', 'cancelled') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Create order_items table
-CREATE TABLE order_items (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT,
-    product_id INT,
-    quantity INT NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders(id),
-    FOREIGN KEY (product_id) REFERENCES products(id)
-);
-```
 
 ### Customization
 
@@ -252,25 +188,6 @@ CREATE TABLE order_items (
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📞 Support
 
-For support or questions:
-- Email: hello@pulsewear.com
-- Phone: +1 (555) 123-4567
-- Website: www.pulsewear.com
-
-## 🔮 Future Enhancements
-
-- User accounts and order history
-- Wishlist functionality
-- Product reviews and ratings
-- Advanced search filters
-- Payment gateway integration
-- Email marketing integration
-- Admin panel for product management
-- Multi-language support
-- Mobile app development
-
----
 
 **Pulse Wear** - Elegant bracelets for every occasion. Handcrafted with love and precision. 
